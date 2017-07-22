@@ -135,6 +135,7 @@ module GLFW
     ContextVersionMinor = LibGLFW::CONTEXT_VERSION_MINOR
     OpenGLForwardCompat = LibGLFW::OPENGL_FORWARD_COMPAT
     OpenGLProfile = LibGLFW::OPENGL_PROFILE
+    Samples = LibGLFW::SAMPLES
   end
 
   enum OpenGLProfile
@@ -153,6 +154,11 @@ module GLFW
 
   def self.create_window(width : Int32, height : Int32, title : String, monitor : LibGLFW::Monitor | Nil = nil, share : LibGLFW::Window | Nil = nil) : LibGLFW::Window
     LibGLFW.create_window(width, height, title, monitor, share)
+  end
+
+  def self.get_cursor_pos(window : LibGLFW::Window)
+    LibGLFW.get_cursor_pos(window, out x, out y)
+    {x, y}
   end
 
   def self.get_key(window : LibGLFW::Window, key : Key) : Keystate
