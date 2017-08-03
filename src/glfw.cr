@@ -185,8 +185,16 @@ module GLFW
     LibGLFW.set_input_mode(window, mode, value)
   end
 
+  def self.set_window_title(window : LibGLFW::Window, title : String)
+    LibGLFW.set_window_title(window, title)
+  end
+
   def self.swap_buffers(window : LibGLFW::Window)
     LibGLFW.swap_buffers(window)
+  end
+
+  def self.swap_interval(interval : Int32)
+    LibGLFW.swap_interval(interval)
   end
 
   def self.terminate
