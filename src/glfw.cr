@@ -208,4 +208,8 @@ module GLFW
   def self.window_should_close(window : LibGLFW::Window)
     LibGLFW.window_should_close(window)
   end
+
+  def self.set_window_should_close(window : LibGLFW::Window, value : Int32)
+    LibGLFW.set_window_should_close(window, value)
+  end
 end
