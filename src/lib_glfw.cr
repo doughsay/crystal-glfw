@@ -161,6 +161,7 @@ lib LibGLFW
   fun poll_events = glfwPollEvents()
   fun get_key = glfwGetKey(window : Window, key : Int32) : Int32
   fun window_should_close = glfwWindowShouldClose(window : Window) : Int32
+  fun set_window_should_close = glfwSetWindowShouldClose(window : Window, int : Int32)
   fun swap_interval = glfwSwapInterval(interval : Int32)
 
   fun get_cursor_pos = glfwGetCursorPos(window : Window, xpos : Float64*, ypos : Float64*)
